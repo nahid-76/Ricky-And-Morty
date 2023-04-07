@@ -46,7 +46,7 @@ const CharacterPage = () => {
             <div className="element-page__episodes">
               <Box display="flex" justifyContent="center">
                 <Typography variant="h2" gutterBottom>
-                  characters
+                  Characters
                 </Typography>
               </Box>
               <CardList cardLink={`/character`} list={el?.characters} />

@@ -1,6 +1,6 @@
 import Header from "@/components/layout/header/header";
-import styles from "@/components/layout/withHeaderLayout/styles.module.scss";
 import Container from "@mui/material/Container";
+import styles from "@/components/layout/withHeaderLayout/styles.module.scss";
 type Props = {
   children?: JSX.Element;
 };

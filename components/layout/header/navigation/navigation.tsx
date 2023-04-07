@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Link from "next/link";
 import Button from "@mui/material/Button";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -9,8 +10,8 @@ import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import MenuItem from "@mui/material/MenuItem";
-import { items } from "@/components/layout/header/navigation/items";
-import Link from "next/link";
+import { LINK_TITLE } from "@/constants/variables";
+import { RICKMORTY } from "@/constants/messages";
 
 const Navigation: React.FC = () => {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
@@ -41,7 +42,7 @@ const Navigation: React.FC = () => {
               textDecoration: "none",
             }}
           >
-            RICKMORTI
+            {RICKMORTY}
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -73,7 +74,7 @@ const Navigation: React.FC = () => {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {items.map((item) => (
+              {LINK_TITLE.map((item) => (
                 <MenuItem key={item} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">
                     <Link href={`/${item}`}>{item}</Link>
@@ -98,10 +99,10 @@ const Navigation: React.FC = () => {
               textDecoration: "none",
             }}
           >
-            RICKMORTI
+            {RICKMORTY}
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {items.map((item) => (
+            {LINK_TITLE.map((item) => (
               <Button
                 key={item}
                 onClick={handleCloseNavMenu}

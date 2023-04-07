@@ -4,7 +4,7 @@ import FilterLocations from "@/components/Sidebar/filters/locations/filterLocati
 import FilterEpisodes from "@/components/Sidebar/filters/episodes/filterEpisodes";
 import { DataTypes } from "@/types/types";
 import Typography from "@mui/material/Typography";
-import { FILTER } from "@/messages/constantMessages";
+import { FILTER } from "@/constants/messages";
 
 interface IProps {
   type:

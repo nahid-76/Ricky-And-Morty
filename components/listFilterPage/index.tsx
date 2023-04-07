@@ -15,7 +15,8 @@ import Pagination from "@mui/material/Pagination";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 import { BASE_URL } from "@/urls/baseURLs";
-import { THERE_IS_NOTHING_TO_SHOW } from "@/messages/constantMessages";
+import { THERE_IS_NOTHING_TO_SHOW } from "@/constants/messages";
+import { LINK_TITLE } from "@/constants/variables";
 
 interface Props {
   type: string;
@@ -37,7 +38,7 @@ const List: React.FC<Props> = ({ type }) => {
     DataTypes.episode,
   ][listTypeID];
 
-  const listTitle = ["Characters", "Locations", "Episodes"][listTypeID];
+  const listTitle = LINK_TITLE[listTypeID];
 
   const fetchPull = [
     fetchPullCharacters,

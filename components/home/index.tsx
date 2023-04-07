@@ -3,7 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import WithHeaderLayout from "@/components/layout/withHeaderLayout/withHeaderLayout";
 import styles from "@/styles/global.module.scss";
-import { SITE_TITLE } from "@/messages/constantMessages";
+import { SITE_TITLE } from "@/constants/messages";
 
 const Home: React.FC = () => {
   return (

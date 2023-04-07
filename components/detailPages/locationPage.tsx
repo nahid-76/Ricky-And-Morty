@@ -34,7 +34,7 @@ const CharacterPage = () => {
                 Type : {el?.type}
               </Typography>
               <Typography variant="h5" gutterBottom>
-                Dimention : {el?.dimention}
+                Dimention : {el?.dimension}
               </Typography>
               <Typography variant="h5" gutterBottom>
                 Created : {formatDate(el?.created)}
@@ -45,7 +45,7 @@ const CharacterPage = () => {
             <div className="element-page__episodes">
               <Box display="flex" justifyContent="center">
                 <Typography variant="h2" gutterBottom>
-                  residents
+                  Residents
                 </Typography>
               </Box>
               <CardList cardLink={`/character`} list={el?.residents} />

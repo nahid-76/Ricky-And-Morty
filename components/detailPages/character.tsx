@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import Image from "next/image";
 import { fetchCharacter } from "@/redux/slices/charactersSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/store";
-import { IEpisode } from "@/redux/types";
-import Image from "next/image";
 import WithHeaderLayout from "@/components/layout/withHeaderLayout/withHeaderLayout";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import styles from "@/styles/global.module.scss";
 import CardList from "@/components/listFilterPage/cardList";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 import { formatDate } from "@/utils/formatDate";
+import styles from "@/styles/global.module.scss";
 const CharacterPage = () => {
   const dispatch = useAppDispatch();
   const [loading, setLoading] = useState<boolean>(true);
