@@ -12,7 +12,7 @@ import {
 type DataType = CharacterData | LocationData | EpisodeData;
 interface Props {
   changeHandler: (e: SelectChangeEvent<any>) => void;
-  itemData: DataType;
+  itemData: any;
   items: DataType;
 }
 
