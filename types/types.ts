@@ -1,8 +1,8 @@
-export type ListTypes = 'characters' | 'locations' | 'episodes'
+export type ListTypes = 'character' | 'location' | 'episode'
 
 export const DataTypes = {
-	characters: "characters",
-	locations: "locations",
-	episodes: "episodes",
+	character: "character",
+	location: "location",
+	episode: "episode",
 	elementpage: "elementpage",
   };

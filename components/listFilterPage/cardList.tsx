@@ -19,7 +19,7 @@ const CardList: React.FC<Props> = ({ list, cardLink }) => {
     >
       {list?.map((item) => (
         <Grid item xs={2} sm={4} md={4} key={item.id}>
-          <Link href={`${cardLink}/${item.id}`}>
+          <Link href={`${cardLink}s/${item.id}`}>
             <Card key={item.id} sx={{ maxWidth: 345 }}>
               <CardActionArea>
                 {item.image && (

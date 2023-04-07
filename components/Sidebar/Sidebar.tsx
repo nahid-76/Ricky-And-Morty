@@ -6,9 +6,9 @@ import { DataTypes } from "@/types/types";
 
 interface IProps {
   type:
-    | typeof DataTypes.characters
-    | typeof DataTypes.locations
-    | typeof DataTypes.episodes
+    | typeof DataTypes.character
+    | typeof DataTypes.location
+    | typeof DataTypes.episode
     | typeof DataTypes.elementpage;
 }
 

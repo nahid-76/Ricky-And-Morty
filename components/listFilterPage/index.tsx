@@ -30,9 +30,9 @@ const List: FC<Props> = ({ type }) => {
   const listTypeID = Object.values(DataTypes).indexOf(type);
 
   const sidebarType = [
-    DataTypes.characters,
-    DataTypes.locations,
-    DataTypes.episodes,
+    DataTypes.character,
+    DataTypes.location,
+    DataTypes.episode,
   ][listTypeID];
 
   const listTitle = ["Characters", "Locations", "Episodes"][listTypeID];
