@@ -30,7 +30,7 @@ export const fetchPullCharacters = createAsyncThunk(
 );
 export const fetchCharacter = createAsyncThunk(
     'charactersSlice',
-    async (id: string) => {
+    async (id: string | undefined | string[]) => {
         let promises: any = [];
         let episode: any = [];
 

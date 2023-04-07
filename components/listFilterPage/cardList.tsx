@@ -10,7 +10,7 @@ import { ICharacter, IEpisode, ILocation } from "@/redux/types";
 
 type ListType = ICharacter | IEpisode | ILocation;
 interface Props {
-  list: ListType[];
+  list: any[] | undefined;
   cardLink: string;
 }
 const CardList: React.FC<Props> = ({ list, cardLink }) => {

@@ -13,7 +13,7 @@ export interface ICharacter{
         "name": string,
         "url": string
     },
-    "image": string,
+    "image": string | undefined,
     "episode": IEpisode[] | string[],
     "url": string,
     "created": string
@@ -26,7 +26,8 @@ export interface IEpisode{
     "episode": string,
     "characters": string[] | ICharacter[],
     "url": string,
-    "created": string
+	"created": string,
+	"image": string | undefined,
 }
 
 export interface ILocation{
@@ -36,7 +37,8 @@ export interface ILocation{
     "dimension": string,
     "residents": ICharacter[] | string[],
     "url": string,
-    "created": string
+	"created": string,
+	"image": string | undefined,
 }
 
 export interface IPullInfo{
