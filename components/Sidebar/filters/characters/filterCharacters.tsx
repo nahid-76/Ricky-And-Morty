@@ -8,6 +8,10 @@ import { selectFormControlsData } from "@/components/Sidebar/filters/characters/
 import { CHARACTER_BASE_URL } from "@/urls/baseURLs";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
+import {
+  deleteObjectEmptyProperties,
+  getUrlStringFromObject,
+} from "@/utils/functions";
 
 const FilterCharacters: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -22,13 +26,9 @@ const FilterCharacters: React.FC = () => {
   const [url, setUrl] = useState<string>("");
 
   useEffect(() => {
-    let url =
-      `${CHARACTER_BASE_URL}/?` +
-      ("name=" + filterData.name) +
-      ("&status=" + filterData.status) +
-      ("&gender=" + filterData.gender) +
-      ("&species=" + filterData.species) +
-      ("&type=" + filterData.type);
+    const data = deleteObjectEmptyProperties(filterData);
+    const filtereItemsString = getUrlStringFromObject(data);
+    let url = `${CHARACTER_BASE_URL}/?${filtereItemsString}`;
     setUrl(url);
   }, [filterData]);
 
@@ -65,7 +65,7 @@ const FilterCharacters: React.FC = () => {
         </Grid>
         <Grid item xs={12}>
           <Button onClick={submitHandler} variant="outlined">
-            Filter
+            filter
           </Button>
         </Grid>
       </Grid>

@@ -6,6 +6,10 @@ import { EpisodeData } from "@/components/Sidebar/filters/types";
 import { EPISODE_BASE_URL } from "@/urls/baseURLs";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
+import {
+  deleteObjectEmptyProperties,
+  getUrlStringFromObject,
+} from "@/utils/functions";
 
 const FilterLocations: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -17,10 +21,9 @@ const FilterLocations: React.FC = () => {
   const [url, setUrl] = useState<string>("");
 
   useEffect(() => {
-    let url =
-      `${EPISODE_BASE_URL}/?` +
-      ("name=" + filterData.name) +
-      ("&episode=" + filterData.episode);
+    const data = deleteObjectEmptyProperties(filterData);
+    const filtereItemsString = getUrlStringFromObject(data);
+    let url = `${EPISODE_BASE_URL}/?${filtereItemsString}`;
     setUrl(url);
   }, [filterData]);
 
@@ -60,7 +63,7 @@ const FilterLocations: React.FC = () => {
         </Grid>
         <Grid item xs={12}>
           <Button onClick={submitHandler} variant="outlined">
-            Filter
+		  filter
           </Button>
         </Grid>
       </Grid>

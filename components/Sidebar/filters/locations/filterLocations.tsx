@@ -8,6 +8,10 @@ import { selectFormControlsData } from "@/components/Sidebar/filters/locations/d
 import { LOCATION_BASE_URL } from "@/urls/baseURLs";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
+import {
+  deleteObjectEmptyProperties,
+  getUrlStringFromObject,
+} from "@/utils/functions";
 
 const FilterLocations: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -20,11 +24,9 @@ const FilterLocations: React.FC = () => {
   const [url, setUrl] = useState<string>("");
 
   useEffect(() => {
-    let url =
-      `${LOCATION_BASE_URL}/?` +
-      ("name=" + filterData.name) +
-      ("&dimension=" + filterData.dimension) +
-      ("&type=" + filterData.type);
+    const data = deleteObjectEmptyProperties(filterData);
+    const filtereItemsString = getUrlStringFromObject(data);
+    let url = `${LOCATION_BASE_URL}/?${filtereItemsString}`;
     setUrl(url);
   }, [filterData]);
 
@@ -71,7 +73,7 @@ const FilterLocations: React.FC = () => {
         </Grid>
         <Grid item xs={12}>
           <Button onClick={submitHandler} variant="outlined">
-            Filter
+            filter
           </Button>
         </Grid>
       </Grid>

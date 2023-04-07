@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 import CardList from "@/components/listFilterPage/cardList";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
-import { formatDate } from "@/utils/formatDate";
+import { formatDate } from "@/utils/functions";
 
 const CharacterPage = () => {
   const dispatch = useAppDispatch();
