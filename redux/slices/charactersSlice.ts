@@ -22,7 +22,6 @@ export const fetchPullCharacters = createAsyncThunk(
             .then(response => response.json())
             .then(data => data)
             .catch(error => {
-                alert(error);
                 return error;
 			});
 		

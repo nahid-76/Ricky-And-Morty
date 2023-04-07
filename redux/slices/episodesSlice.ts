@@ -24,7 +24,6 @@ export const fetchPullEpisodes = createAsyncThunk(
             .then(response => response.json())
             .then(data => data)
             .catch(error => {
-                alert(error);
                 return error;
             });
         return pull

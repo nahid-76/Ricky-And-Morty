@@ -22,7 +22,6 @@ export const fetchPullLocations = createAsyncThunk(
             .then(response => response.json())
             .then(data => data)
             .catch(error => {
-                alert(error);
                 return error;
 			})
         return pull
