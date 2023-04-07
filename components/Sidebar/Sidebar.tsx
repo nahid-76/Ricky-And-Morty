@@ -3,6 +3,8 @@ import FilterCharacters from "@/components/Sidebar/filters/characters/filterChar
 import FilterLocations from "@/components/Sidebar/filters/locations/filterLocations";
 import FilterEpisodes from "@/components/Sidebar/filters/episodes/filterEpisodes";
 import { DataTypes } from "@/types/types";
+import Typography from "@mui/material/Typography";
+import { FILTER } from "@/messages/constantMessages";
 
 interface IProps {
   type:
@@ -24,6 +26,9 @@ const Sidebar: FC<IProps> = (props) => {
 
   return (
     <>
+      <Typography variant="h3" gutterBottom>
+        {FILTER}
+      </Typography>
       <Filter />
     </>
   );

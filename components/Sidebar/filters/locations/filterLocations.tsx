@@ -8,7 +8,6 @@ import { selectFormControlsData } from "@/components/Sidebar/filters/locations/d
 import { LOCATION_BASE_URL } from "@/urls/baseURLs";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
 
 const FilterLocations: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -42,9 +41,6 @@ const FilterLocations: React.FC = () => {
 
   return (
     <>
-      <Typography variant="h3" gutterBottom>
-        Filter
-      </Typography>
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <TextField

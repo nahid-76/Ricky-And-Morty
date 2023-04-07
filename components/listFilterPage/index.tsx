@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { fetchPullCharacters } from "@/redux/slices/charactersSlice";
 import { fetchPullEpisodes } from "@/redux/slices/episodesSlice";
 import { fetchPullLocations } from "@/redux/slices/locationsSlice";
@@ -15,16 +15,18 @@ import Pagination from "@mui/material/Pagination";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 import { BASE_URL } from "@/urls/baseURLs";
+import { THERE_IS_NOTHING_TO_SHOW } from "@/messages/constantMessages";
 
 interface Props {
   type: string;
 }
 
-const List: FC<Props> = ({ type }) => {
+const List: React.FC<Props> = ({ type }) => {
   const dispatch = useAppDispatch();
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    dispatch(fetchPull());
+    dispatch(fetchPull()).then(() => setLoading(false));
   }, []);
 
   const listTypeID = Object.values(DataTypes).indexOf(type);
@@ -69,7 +71,7 @@ const List: FC<Props> = ({ type }) => {
     event: React.ChangeEvent<unknown>,
     value: number
   ) => {
-    dispatch(fetchPull(`${BASE_URL}character/?page=${value}`));
+    dispatch(fetchPull(`${BASE_URL}${type}/?page=${value}`));
   };
 
   return (
@@ -83,8 +85,14 @@ const List: FC<Props> = ({ type }) => {
             <Typography variant="h3" gutterBottom>
               {listTitle}
             </Typography>
-            {pull?.length > 0 ? (
-              <CardList cardLink={`/${type}`} list={pull} />
+            {!loading ? (
+              pull ? (
+                <CardList cardLink={`/${type}`} list={pull} />
+              ) : (
+                <Typography variant="h5" gutterBottom>
+                  {THERE_IS_NOTHING_TO_SHOW}
+                </Typography>
+              )
             ) : (
               <Box display="flex" justifyContent="center">
                 <CircularProgress />
