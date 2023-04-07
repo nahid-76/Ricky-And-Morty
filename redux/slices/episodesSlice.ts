@@ -31,7 +31,7 @@ export const fetchPullEpisodes = createAsyncThunk(
 );
 export const fetchEpisode = createAsyncThunk(
     'fetchEpisode',
-    async (id: string) => {
+    async (id: string | undefined | string[]) => {
         let promises: any = [];
         let characters: any = [];
 

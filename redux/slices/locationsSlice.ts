@@ -29,7 +29,7 @@ export const fetchPullLocations = createAsyncThunk(
 )
 export const fetchLocation = createAsyncThunk(
     'fetchLocation',
-    async (id: string) => {
+    async (id: string | undefined | string[]) => {
         let promises: any = [];
         let residents: any = [];
 
