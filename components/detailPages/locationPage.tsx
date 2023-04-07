@@ -8,6 +8,7 @@ import Typography from "@mui/material/Typography";
 import CardList from "@/components/listFilterPage/cardList";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
+import { formatDate } from "@/utils/formatDate";
 const CharacterPage = () => {
   const dispatch = useAppDispatch();
   const [loading, setLoading] = useState<boolean>(true);
@@ -36,7 +37,7 @@ const CharacterPage = () => {
                 Dimention : {el?.dimention}
               </Typography>
               <Typography variant="h5" gutterBottom>
-                Created : {el?.created}
+                Created : {formatDate(el?.created)}
               </Typography>
             </div>
           </Grid>
@@ -47,7 +48,7 @@ const CharacterPage = () => {
                   residents
                 </Typography>
               </Box>
-              <CardList cardLink={`/characters`} list={el?.residents} />
+              <CardList cardLink={`/character`} list={el?.residents} />
             </div>
           </Grid>
         </Grid>

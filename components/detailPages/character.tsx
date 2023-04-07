@@ -11,6 +11,7 @@ import styles from "@/styles/global.module.scss";
 import CardList from "@/components/listFilterPage/cardList";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
+import { formatDate } from "@/utils/formatDate";
 const CharacterPage = () => {
   const dispatch = useAppDispatch();
   const [loading, setLoading] = useState<boolean>(true);
@@ -44,7 +45,7 @@ const CharacterPage = () => {
                 {el?.name}
               </Typography>
               <Typography variant="h5" gutterBottom>
-                <strong>STATUS</strong>: {el?.status}
+                Status: {el?.status}
               </Typography>
               <Typography variant="h5" gutterBottom>
                 Species: {el?.species}
@@ -55,6 +56,9 @@ const CharacterPage = () => {
               <Typography variant="h5" gutterBottom>
                 Gender: {el?.gender}
               </Typography>
+              <Typography variant="h5" gutterBottom>
+                Created : {formatDate(el?.created)}
+              </Typography>
             </div>
           </Grid>
           <Grid item xs={12} md={12}>
@@ -64,7 +68,7 @@ const CharacterPage = () => {
                   Episodes
                 </Typography>
               </Box>
-              <CardList cardLink={`/episodes`} list={el?.episode} />
+              <CardList cardLink={`/episode`} list={el?.episode} />
             </div>
           </Grid>
         </Grid>
