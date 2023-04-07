@@ -13,7 +13,7 @@ type DataType = CharacterData | LocationData | EpisodeData;
 interface Props {
   changeHandler: (e: SelectChangeEvent<any>) => void;
   itemData: any;
-  items: DataType;
+  items: any;
 }
 
 const SelectFormControls: React.FC<Props> = ({
